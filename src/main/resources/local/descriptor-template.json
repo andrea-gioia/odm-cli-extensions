@@ -1,0 +1,28 @@
+{
+    "dataProductDescriptor": "1.0.0",
+    "info": {
+        "displayName": "{info.displayName}",
+        "fullyQualifiedName": "urn:dpds:{namespace}:dataproducts:{product-name}:1",
+        "name": "{product-name}",
+        "version": "1.2.3",
+        "domain": "{info.domain}",
+        "entityType": "dataproduct",
+        "description": "{info.description}",
+        "owner": {
+            "id": "{info.owner.id}",
+            "name": "{info.owner.name}"
+        }
+    },
+    "interfaceComponents": {
+        "inputPorts": [],
+        "outputPorts": [],
+        "observabilityPorts": [],
+        "discoverabilityPorts": [],
+        "controlPorts": []
+    },
+    "internalComponents": {
+        "lifecycleInfo": {},
+        "applicationComponents": [],
+        "infrastructuralComponents": []
+    }
+}

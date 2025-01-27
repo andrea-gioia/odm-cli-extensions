@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+    <parent>
+        <groupId>org.opendatamesh</groupId>
+        <artifactId>odm-platform</artifactId>
+        <version>1.0.12</version>
+        <relativePath>../</relativePath>
+    </parent>
+    -->
+
+    <groupId>org.opendatamesh</groupId>
+    <artifactId>odm-platform-cli-extensions</artifactId>
+    <description>Open Data Mesh Platform's CLI Extensions</description>
+    <name>ODM Platform CLI</name>
+    <version>1.0.12</version>
+    <url>https://github.com/opendatamesh-initiative/odm-platform</url>
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git@github.com:opendatamesh-initiative/odm-cli-extensions</connection>
+        <developerConnection>scm:git:git@github.com:opendatamesh-initiative/odm-cli-extensions</developerConnection>
+        <url>scm:git:git@github.com:opendatamesh-initiative/odm-cli-extensions</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Quantyca</name>
+            <email>odm.info@quantyca.it</email>
+            <organization>Quantyca S.R.L</organization>
+            <organizationUrl>https://www.quantyca.it/</organizationUrl>
+        </developer>
+    </developers>
+
+    <dependencies>
+
+
+        <!-- Internals -->
+        <dependency>
+            <groupId>org.opendatamesh</groupId>
+            <artifactId>odm-platform-core-commons</artifactId>
+            <version>1.0.12</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.opendatamesh</groupId>
+            <artifactId>odm-platform-cli</artifactId>
+            <version>1.0.12</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.networknt</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>1.0.77</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,10 @@
+{
+    "fullyQualifiedName": "{fqn}",
+    "name": "{name}",
+    "displayName": "{displayName}",
+    "description": "{description}",
+    "version": "{version}",
+    "promises": {},
+    "expectatctions": {},
+    "obligations": {}
+}
