@@ -1,17 +1,16 @@
-package org.opendatamesh.odm.cli.extensions;
+package org.opendatamesh.cli.extensions;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.UUID;
 
+import org.opendatamesh.cli.utils.CliFileUtils;
 import org.opendatamesh.dpds.model.core.StandardDefinitionDPDS;
 import org.opendatamesh.dpds.model.definitions.DefinitionReferenceDPDS;
 import org.opendatamesh.dpds.model.interfaces.PortDPDS;
 import org.opendatamesh.dpds.model.interfaces.PromisesDPDS;
 import org.opendatamesh.dpds.utils.ObjectMapperFactory;
-import org.opendatamesh.odm.cli.commands.local.ImportTool;
-import org.opendatamesh.odm.cli.utils.CliFileUtils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nimbusds.jose.shaded.json.JSONObject;

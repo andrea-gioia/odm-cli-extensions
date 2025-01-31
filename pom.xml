@@ -4,21 +4,12 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!--
-    <parent>
-        <groupId>org.opendatamesh</groupId>
-        <artifactId>odm-platform</artifactId>
-        <version>1.0.12</version>
-        <relativePath>../</relativePath>
-    </parent>
-    -->
-
     <groupId>org.opendatamesh</groupId>
     <artifactId>odm-platform-cli-extensions</artifactId>
     <description>Open Data Mesh Platform's CLI Extensions</description>
     <name>ODM Platform CLI</name>
-    <version>1.0.12</version>
-    <url>https://github.com/opendatamesh-initiative/odm-platform</url>
+    <version>0.1.0</version>
+    <url>https://github.com/andrea-gioia/odm-cli-extensions</url>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -56,11 +47,10 @@
             <scope>compile</scope>
         </dependency>
 
-
         <dependency>
             <groupId>org.opendatamesh</groupId>
             <artifactId>odm-platform-cli</artifactId>
-            <version>1.0.12</version>
+            <version>0.1.0</version>
             <scope>compile</scope>
         </dependency>
 
@@ -68,7 +58,7 @@
         <dependency>
             <groupId>com.networknt</groupId>
             <artifactId>json-schema-validator</artifactId>
-            <version>1.0.77</version>
+            <version>1.0.72</version>
         </dependency>
 
     </dependencies>
@@ -84,12 +74,39 @@
                     <target>11</target>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
             </plugin>
+            <!-- Maven Antrun Plugin for Copying the JAR -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-jar</id>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <!-- Create the directory if it does not exist -->
+                                <mkdir dir="${user.home}/.odmcli/extensions" />
+                                <!-- Copy the JAR to the .odmcli folder -->
+                                <copy
+                                    file="${project.build.directory}/${project.build.finalName}.jar"
+                                    todir="${user.home}/.odmcli/extensions" />
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
+
 </project>
